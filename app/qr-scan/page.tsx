@@ -124,6 +124,12 @@ export default function QrScanPage() {
       }
       ctx.drawImage(video, 0, 0, canvas.width, canvas.height)
       const imageDataUrl = canvas.toDataURL('image/png')
+      // 1. Canvas → Blob
+      // const blob = await new Promise<Blob>((resolve) => {
+      //   canvas.toBlob((blob) => {
+      //     resolve(blob!)
+      //   }, 'image/png')
+      // })
       setCapturedImage(imageDataUrl)
     } catch (e: any) {
       setError(e?.message || String(e))
